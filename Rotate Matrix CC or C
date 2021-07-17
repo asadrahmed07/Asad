@@ -1,0 +1,84 @@
+// To Rotate a given Matrix Clockwise or Anti- Clockwise
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{  int N, D;
+  printf(" Enter the side of matrix: ");
+  scanf("%d" ,&N);
+  
+  printf(" Enter the martix : " );  //Taking the Matrix
+  int X[N][N];
+  
+  for (int i=0; i< N; ++i)
+  {     
+         for (int j=0; j<N; ++j)
+         {     
+              scanf("%d" , &X[i][j]);
+         }
+  }
+   
+  printf("Enter 1 for anticlockwise and 2 for clockwise " );
+  scanf("%d", &D);
+  
+  if (D==1) 
+{   for (int i=0; i< N/2; ++i)              //Anti-Clockwise Statement
+    {     
+         for (int j=i; j<N-i-1; ++j)
+         {     int temp=0;
+              
+                temp  =  X[i][j];
+                
+                X[i][j]  =  X[j][N-1-i];
+                 
+                X[j][N-1-i]  =  X[N-1-i][N-1-j];
+                 
+                X[N-1-i][N-1-j]  =  X[N-1-j][i];
+                
+                X[N-1-j][i]  =  temp ;
+                 
+            
+          
+         }
+    }
+}   
+    else 
+ {  
+     for (int i=0; i< N/2; ++i)             //Clockwise Statement 
+     {     
+         for (int j=i; j<N-i-1; ++j)
+             {     
+                  int temp=0;
+              
+                  temp  =  X[i][j];
+                
+                  X[i][j]  =  X[N-1-j][i];
+                 
+                  X[N-1-j][i]  =  X[N-1-i][N-1-j];
+                 
+                  X[N-1-i][N-1-j]  =  X[j][N-1-i];
+                
+                  X[j][N-1-i]  =  temp ;
+                  
+            
+             }
+             
+     }
+	 
+ }         
+         
+       for (int i=0; i< N; ++i)             // Printing block
+  {     
+         for (int j=0; j<N; ++j)
+         {     
+              printf("%d\t" , X[i][j]);
+              
+         }
+      
+      printf("\n");
+     
+       
+  }    
+         
+  return 0;
+}
