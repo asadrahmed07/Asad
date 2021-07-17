@@ -1,0 +1,45 @@
+// Find if any Set of Strings contains S as a prefix
+ #include<stdio.h>
+ #include<stdlib.h>
+ #include<string.h>
+
+int main()
+{ 
+    char S[3];
+    int num = 5;
+    printf( " Enter the string: ");
+    char X[num][10];
+    for (int i= 0; i<num ; ++i ) 
+       {  
+           scanf("%s", X[i]);
+     
+        }
+ 
+    printf(" Enter the string : " );
+    scanf("%s", S);
+ 
+    int size = strlen(S);
+    printf(" The resutant strings are: \n ");
+
+           for(int i=0; i<5 ;i++)
+          {   int n=0;
+                for (int j=0; j<3; j++)
+                      {  
+     
+                         if (X[i][j]==S[j])
+                             {   
+                                 n++;
+                              }
+                           
+                           else
+                               break;
+                       }
+              
+              if(n == size)
+              {  
+                 printf("%s\n",X[i]);
+              }
+      
+           }
+ return 0;
+ }
