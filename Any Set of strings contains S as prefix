@@ -1,4 +1,5 @@
-// Find if any Set of Strings contains S as a prefix
+// Find if any Set of Strings contains S as a prefix or not
+
  #include<stdio.h>
  #include<stdlib.h>
  #include<string.h>
